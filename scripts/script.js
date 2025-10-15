@@ -14,12 +14,18 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
+let isMouseDown = false;
+
+sketchPad.addEventListener("mousedown", () => isMouseDown = true);
+sketchPad.addEventListener("mouseup", () => isMouseDown = false);
+
 const pixels = document.querySelectorAll(".pixel");
 
 pixels.forEach(pixel => {
   pixel.addEventListener("mouseenter", () => {
-    pixel.style.backgroundColor = "blue";
+    if (isMouseDown) pixel.style.backgroundColor = "blue";
   });
 });
+
 
 console.log(getPadLayout());
