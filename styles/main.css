@@ -24,7 +24,8 @@ label, select, button {
 .sketch-pad {
   display: flex;
   flex-wrap: wrap;
-  width: 640px;
+  width: 480px;
+  height: 480px;
   background-color: #f1f1f1;
   border: 3px solid #f1f1f1;
   margin: auto;

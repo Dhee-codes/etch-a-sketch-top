@@ -10,13 +10,9 @@
     <h1>Etch-A-Sketch</h1>
     <div class="container">
         <div class="tools">
-            <label for="grid-layout">Choose the size for the Sketch Pad</label>
-            <select name="grid-size" id="grid-layout">
-                <option value="sixteen-by-sixteen">16 x 16</option>
-                <option value="ten-by-ten">10 x 10</option>
-                <option value="twelve-by-twelve">12 x 12</option>
-                <option value="thirty-by-thirty">30 x 30</option>
-            </select>
+            <label for="size">Enter the size for the Sketch Pad (e.g 16)</label>
+            <input type="number" name="size" id="size">
+            <button id="generate">Generate</button>
 
             <button class="color">Color</button>
             <button class="eraser">Eraser</button>
