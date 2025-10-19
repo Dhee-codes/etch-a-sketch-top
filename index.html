@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-A-Sketch-TOP</title>
+    <title>Etch-a-Sketch-TOP</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
+    <h1>Etch-a-Sketch</h1>
     <div class="container">
         <div class="tools">
-            <label for="size">Enter the size for the Sketch Pad (e.g 16)</label>
-            <input type="number" name="size" id="size">
-            <button id="generate">Generate</button>
+            <div class="user-input">
+                <input type="number" name="size" id="size" placeholder="Enter a size for the Sketch Pad (e.g 16)">
+                <button id="generate" class="generate">Generate</button>
+            </div>
 
-            <button class="color">Color</button>
-            <button class="eraser">Eraser</button>
-            <button class="clear-pad">Clear Pad</button>
+            <div class="color">
+                <p class="color-text">Color</p>
+                <div class="palette">
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                    <div class="pot"></div>
+                </div>
+            </div>
+            <button class="grid-line tool">Grid line</button>
+            <button class="eraser tool">Eraser</button>
+            <button class="clear-pad tool">Clear Pad</button>
         </div>
-        <div class="sketch-pad"></div>
+        <div class="pad">
+            <div>
+                <div class="layout">16 x 16</div>
+                <div class="sketch-pad"></div>
+            </div>
+        </div>
     </div>
     
     <script src="scripts/script.js"></script>

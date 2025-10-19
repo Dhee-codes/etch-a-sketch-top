@@ -11,21 +11,95 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 3.2rem;
+  font-family: cursive;
+  padding: 0.3rem;
 }
 
 .container {
+  width: 80%;
   display: flex;
+  gap: 9.5rem;
+  margin: auto;
 }
 
-label, select, button {
-  display: block;
+.user-input {
+  margin: 1.5rem 0 1.6rem 0;
+}
+
+input, button, .color {
+  font-size: 1rem;
+  font-family: serif;
+  border: none;
+  border-radius: 15px;
+}
+
+input {
+  width: 18.5rem;
+  margin-right: 1.42rem;
+}
+
+input, .generate {
+  padding: 12px 14px;
+}
+
+.tool {
+  width: 100%;
+  height: 3rem;
+  margin-top: 1.3rem;
+}
+
+.color {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  background-color: #f1f1f1;
+  padding: 1.4rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.color-text {
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.palette {
+  width: 79%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: auto;
+}
+
+.pot {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.eraser {
+  margin-right: 14rem;
+}
+
+.layout {
+  width: 5rem;
+  height: 1.3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  background-color: #f1f1f1e7;
+  border-radius: 40% 40% 0 0;
+  padding-top: 5px;
 }
 
 .sketch-pad {
   display: flex;
   flex-wrap: wrap;
-  width: 480px;
-  height: 480px;
+  width: 520px;
+  height: 520px;
   background-color: #f1f1f1;
   border: 3px solid #f1f1f1;
   margin: auto;
