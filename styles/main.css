@@ -36,17 +36,35 @@ input, button, .color {
 
 input {
   width: 18.5rem;
-  margin-right: 1.42rem;
+  margin-right: 0.5rem;
 }
 
 input, .generate {
-  padding: 12px 14px;
+  padding: 12px 12px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc4c4;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .tool {
   width: 100%;
   height: 3rem;
+  font-weight: 600;
   margin-top: 1.3rem;
+}
+
+button, .color {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .color {
@@ -70,13 +88,15 @@ input, .generate {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin: auto;
+  cursor: url(), auto;
 }
 
 .pot {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: #333;
+  border: 2px inset #333;
+  background-color: #f1f1f1;
 }
 
 .eraser {
@@ -102,11 +122,10 @@ input, .generate {
   height: 520px;
   background-color: #f1f1f1;
   border: 3px solid #f1f1f1;
+  cursor: url(), auto;
   margin: auto;
 }
 
-.sketch-pad > div {
-  flex: 0 0 calc(100% / 16);
-  aspect-ratio: 1 / 1;
+.grid-lines {
   border: 1px solid lightgrey;
 }
