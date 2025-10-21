@@ -36,43 +36,39 @@ function generatePadLayout() {
 }
 
 function sketch() {
-  const pixels = document.querySelectorAll(".pixel")
-
-  pixels.forEach( pixel => {
+  document.querySelectorAll(".pixel").forEach( pixel => {
     pixel.addEventListener('mouseenter', () => {
-      if (isMouseDown) pixel.style.backgroundColor = "blue";
+      if (!isMouseDown) return
+      if (isEraser) pixel.style.backgroundColor = "";
+      else pixel.style.backgroundColor = "blue";
     });
   });
-
-  function useEraser() {
-    isEraser = !isEraser;
-
-    pixels.forEach( pixel => {
-      pixel.addEventListener('mouseenter', () => {
-        if (isEraser) pixel.style.backgroundColor = "";
-      });
-    });
-  }
-
-  eraser.addEventListener('click', useEraser)
-
-  clearBtn.addEventListener('click', () => {
-    pixels.forEach( pixel => {
-      pixel.style.backgroundColor = ""; 
-    })
-  });
-
-  function toggleGridLines() {
-    showGrid = !showGrid;
-
-    pixels.forEach( pixel => {
-      if (!showGrid) pixel.classList.remove("grid-lines");
-      if (showGrid) pixel.classList.add("grid-lines");
-    });
-  }
-
-  gridLines.addEventListener('click', toggleGridLines);
 }
+
+function clearPad() {
+  document.querySelectorAll(".pixel").forEach( pixel => {
+    pixel.style.backgroundColor = ""; 
+  });
+}
+
+function toggleGridLines() {
+  showGrid = !showGrid;
+
+  document.querySelectorAll(".pixel").forEach( pixel => {
+    if (!showGrid) pixel.classList.remove("grid-lines");
+    else pixel.classList.add("grid-lines");
+  });
+}
+
+eraser.addEventListener('click', () => {
+  isEraser = !isEraser;
+  if (isEraser) eraser.classList.add("active-eraser");
+  else eraser.classList.remove("active-eraser");
+});
+
+clearBtn.addEventListener('click', clearPad);
+
+gridLines.addEventListener('click', toggleGridLines);
 
 document.addEventListener("DOMContentLoaded", generatePadLayout);
 generateBtn.addEventListener('click', generatePadLayout);
