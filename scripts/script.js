@@ -11,6 +11,7 @@ let isMouseDown = false;
 
 sketchPad.addEventListener("mousedown", () => isMouseDown = true);
 sketchPad.addEventListener("mouseup", () => isMouseDown = false);
+sketchPad.addEventListener("mouseleave", () => isMouseDown = false);
 
 let isEraser = false;
 let showGrid = true;
