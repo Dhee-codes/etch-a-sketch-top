@@ -19,6 +19,7 @@ h1 {
 .container {
   width: 80%;
   display: flex;
+  justify-content: center;
   gap: 9.5rem;
   margin: auto;
 }
@@ -35,7 +36,7 @@ input, button, .color {
 }
 
 input {
-  width: 18.5rem;
+  width: 72%;
   margin-right: 0.5rem;
 }
 
@@ -44,6 +45,7 @@ input, .generate {
 }
 
 button {
+  width: 25%;
   cursor: pointer;
 }
 
@@ -69,6 +71,7 @@ button, .color {
 
 .color {
   width: 100%;
+  min-width: 420px;
   text-align: center;
   font-size: 1.2rem;
   color: #333;
@@ -79,16 +82,17 @@ button, .color {
 
 .color-text {
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .palette {
   position: relative;
   width: 79%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.8rem;
   margin: auto;
+  margin-bottom: 1rem;
 }
 
 .color-menu {
