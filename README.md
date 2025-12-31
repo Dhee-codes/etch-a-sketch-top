@@ -88,7 +88,7 @@ etch-a-sketch/
 
 ## Author
 
-**Dhee-codes**
+**divine-obiorah**
 
 ---
 
