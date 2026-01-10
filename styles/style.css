@@ -162,7 +162,7 @@ button, .color {
     width: 100%;
     grid-template-columns: repeat(10, 1fr);
     margin: 0;
-    overflow: hidden;
+    overflow-x: scroll;
   }
 }
 
