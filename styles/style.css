@@ -37,7 +37,7 @@ h1 {
     position: relative;
     width: 100%;
     flex-direction: column-reverse;
-    gap: 1rem;
+    gap: 3vh;
     margin: 0;
     padding: 0.6rem;
   }
@@ -90,13 +90,17 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: rgb(252, 168, 168);
-  transition: transform 0.1s ease;
+@media (hover: hover) {
+  button:hover {
+    background-color: rgb(252, 168, 168);
+    transition: transform 0.1s ease;
+  }
 }
 
-button:active {
-  transform: scale(0.95);
+@media (min-width: 768px) {
+  button:active {
+    transform: scale(0.95);
+  }
 }
 
 .tool {

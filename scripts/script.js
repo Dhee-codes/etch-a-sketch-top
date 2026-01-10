@@ -13,6 +13,9 @@ sketchPad.addEventListener("mousedown", () => isMouseDown = true);
 sketchPad.addEventListener("mouseup", () => isMouseDown = false);
 sketchPad.addEventListener("mouseleave", () => isMouseDown = false);
 
+sketchPad.addEventListener("touchstart", () => isMouseDown = true);
+sketchPad.addEventListener("touchend", () => isMouseDown = false);
+
 let isEraser = false;
 let showGrid = true;
 
@@ -40,22 +43,31 @@ function generatePadLayout() {
 
 function sketch() {
   document.querySelectorAll(".pixel").forEach(pixel => {
-    pixel.addEventListener('mouseenter', () => {
-      if (!isMouseDown) return;
-      if (isEraser) {
-        pixel.style.backgroundColor = "";
-      } else if (paletteState.activeColor === "multi") {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
-      } else {
-        pixel.style.backgroundColor = paletteState.activeColor || defaultPot.dataset.color;
+    pixel.addEventListener('mouseenter', handlePixelDraw);
+    pixel.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+      if (element && element.classList.contains("pixel")) {
+        handlePixelDraw.call(element);
       }
     });
   });
 }
 
+function handlePixelDraw() {
+  if (!isMouseDown) return;
+  if (isEraser) {
+    this.style.backgroundColor = "";
+  } else if (paletteState.activeColor === "multi") {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    this.style.backgroundColor = `rgb(${r},${g},${b})`;
+  } else {
+    this.style.backgroundColor = paletteState.activeColor || defaultPot.dataset.color;
+  }
+}
 
 function clearPad() {
   document.querySelectorAll(".pixel").forEach( pixel => {
