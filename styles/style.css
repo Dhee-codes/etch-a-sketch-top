@@ -24,6 +24,11 @@ h1 {
   }
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 .container {
   width: 80%;
   display: flex;
@@ -123,7 +128,6 @@ button, .color {
   background-color: #f1f1f1;
   padding: 1.4rem 1.2rem;
   margin-bottom: 1.5rem;
-  overflow: hidden;
 }
 
 @media (max-width: 768px) {
